@@ -22,6 +22,34 @@
     <img style="margin:0.5em;" src="https://novice79.github.io/screenshots/cashier/Screenshot_20190902-171737.jpg" alt="系统消息"/>
 </div>
 
+用wrk压一下看看，在我的一加5t上的结果如下：
+```
+get请求：
+wrk -t10 -c100 -d30s  http://192.168.1.96:12345/
+Running 30s test @ http://192.168.1.96:12345/
+10 threads and 100 connections
+Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    24.50ms   54.23ms 664.45ms   97.81%
+    Req/Sec   578.20     66.91   787.00     87.00%
+169020 requests in 30.03s, 171.67MB read
+Requests/sec:   5627.78
+Transfer/sec:      5.72MB
+```
+
+```
+post json请求订单查询：
+wrk -t10 -c100 -d30s -s ./post.lua http://192.168.1.96:12345/get_cli_orders
+Running 30s test @ http://192.168.1.96:12345/get_cli_orders
+10 threads and 100 connections
+Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    17.13ms    8.25ms 342.00ms   97.62%
+    Req/Sec   599.25     45.59     1.06k    87.99%
+178558 requests in 30.03s, 22.14MB read
+Requests/sec:   5945.60
+Transfer/sec:    754.81KB
+```
+因为这是用boost asio单线程异步处理的，理论上应该与nodejs单进程的http服务性能差不多。不过对内网商城来说已经够用了。
+
 <!-- 324*648 -->
 **[App下载（4.2M）](https://novice79.github.io/dist/cashier.apk)**
 <!-- 
