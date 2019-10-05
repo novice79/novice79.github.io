@@ -23,8 +23,9 @@
 </div>
 
 用wrk压一下看看，在我的一加5t上的结果如下：
-```
+
 get请求：
+```
 wrk -t10 -c100 -d30s  http://192.168.1.96:12345/
 Running 30s test @ http://192.168.1.96:12345/
 10 threads and 100 connections
@@ -36,8 +37,8 @@ Requests/sec:   5627.78
 Transfer/sec:      5.72MB
 ```
 
-```
 post json请求订单查询：
+```
 wrk -t10 -c100 -d30s -s ./post.lua http://192.168.1.96:12345/get_cli_orders
 Running 30s test @ http://192.168.1.96:12345/get_cli_orders
 10 threads and 100 connections
