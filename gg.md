@@ -6,9 +6,11 @@
 然后用什么webgl库加载3D模型呢，用[threejs](https://threejs.org/)还是[blend4web]？现在大多数人都用unity，虽然笨重了点但确实好用，就用unity写控制逻辑吧，再导出为webgl。把[$1]的canvas叠加到unity的webgl div上，用vuejs做手势设置和帮助界面，这样一个【[$1]+unity+vue】的spa 3D网站就出来了。问题是这个网站太大，十几兆（血精灵模型+10个fbx动画），没人会等几分钟去打开一个网站，主要是现在网速太慢，可能等以后网速再提高10倍，3D网站才会普及。那就用cordova打包成安卓app吧，实际上打包成ios或其它平台的app都行。    
 运行效果如下：
 <div style="display:flex;flex-wrap: wrap;align-items: center;justify-content: center;">
-    <video style="margin:1.0em;" src="https://novice79.github.io/video/gg.mp4"></video>
+    <img style="margin:1.0em;" src="https://novice79.github.io/video/gg.gif"></img>
     <img style="margin:1.0em;" src="https://novice79.github.io/screenshots/gg/Screenshot_20191031-220744.jpg" />
 </div>
+
+[演示视频(2.6M)](https://novice79.github.io/video/gg.mp4)
 
 **[App下载（15.8M）](https://novice79.github.io/dist/gg.apk)**
 
