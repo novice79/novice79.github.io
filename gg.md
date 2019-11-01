@@ -4,11 +4,18 @@
 我想手机操作模式无非就是声控跟手势。先实验一下声控，在网上找了一个卡内基·梅隆的[sphinx](https://cmusphinx.github.io/)库，这个库可以训练自定义发音的，比如你说“向前奔跑”、“旋风斩”，只要训练成模型了加载进去，再说这句话它就会识别。我用了一个[openears](https://www.politepix.com/openears/)的ios SDK读取/辨析sphinx训练的句子，再用[blend4web]加载游戏角色模型和动画，这样就能用声音控制角色移动和技能施放了。实验效果是：安静环境下，大多数情况能控制，但在有噪音的环境容易误判。所以声控并不实用，因为没法控制周围环境。再试一下手势操控。     
 安卓有一个GestureOverlayView可以识别自定义手势，但我不想绑定在Android平台，就像什么“小程序”只能在XX环境中运行一样，我想要在像浏览器这种omnipresent的环境中运行。找到一个华盛顿大学+微软工程师开发的一个[$1]，把其中的js库拿出来再自己加了点垃圾代码，就可在h5的canvas里用了。        
 然后用什么webgl库加载3D模型呢，用[threejs](https://threejs.org/)还是[blend4web]？现在大多数人都用unity，虽然笨重了点但确实好用，就用unity写控制逻辑吧，再导出为webgl。把[$1]的canvas叠加到unity的webgl div上，用vuejs做手势设置和帮助界面，这样一个【[$1]+unity+vue】的spa 3D网站就出来了。问题是这个网站太大，十几兆（血精灵模型+10个fbx动画），没人会等几分钟去打开一个网站，主要是现在网速太慢，可能等以后网速再提高10倍，3D网站才会普及。那就用cordova打包成安卓app吧，实际上打包成ios或其它平台的app都行。    
+
+有人可能会说画手势太慢，没有按键快。但技能是有cd的，又不是按的越快就能施放更多技能。公共cd一秒，如果双持长柄武器，普通攻击都要2秒，就算是拿匕首，普攻一般都是近身自动触发的，也不需要按键。一般技能cd一、二十秒，大招2、3分钟，画一个手势1秒钟，也不存在太慢的问题。
+
 运行效果如下：
 <div style="display:flex;flex-wrap: wrap;align-items: center;justify-content: center;">
     <img style="margin:1.0em;" src="https://novice79.github.io/video/gg.gif"></img>
     <img style="margin:1.0em;" src="https://novice79.github.io/screenshots/gg/Screenshot_20191031-220744.jpg" />
 </div>
+
+因为是在安卓webview里运行，老手机不支持webgl，或支持不好的，可能运行不了。    
+我这边测试是：nexus 6p（Android6）根本打不开，华为M3青春版（Android7）运行有点卡，一加5t可以流畅运行
+
 
 [演示视频(2.6M)](https://novice79.github.io/video/gg.mp4)
 
