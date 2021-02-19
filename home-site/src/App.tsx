@@ -25,11 +25,11 @@ const posts = [
 ]
 
 function App() {
+  const history = useHistory();
   useEffect(() => {
     let path = localStorage.getItem('path');
     if(path) {
       localStorage.removeItem('path');
-      const history = useHistory();
       console.log(`localStorage's path=${path}`)
       history.replace(path);
     }
