@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useHistory } from "react-router-dom";
 import logo from './logo.png';
 import './App.css';
 import { 
@@ -24,6 +25,15 @@ const posts = [
 ]
 
 function App() {
+  useEffect(() => {
+    let path = localStorage.getItem('path');
+    if(path) {
+      localStorage.removeItem('path');
+      const history = useHistory();
+      console.log(`localStorage's path=${path}`)
+      history.replace(path);
+    }
+  }, []);
   return (
     <div>
       <Header>
