@@ -8,10 +8,10 @@
 人类语言：中文，英文  
 就阅读水平来说，英文和中文差不多，实际上很多年没看过中文技术书了。  
 编程语言：  
-assembly、c/c++、rust、delphi、objective-c、swift、go、kotlin、java、c#、lua、ocaml、
+assembly、c/c++、rust、delphi、objective-c、swift、go、kotlin、java、groovy、c#、lua、ocaml、
 haskell、lisp、scheme、javascript、typescript、dart、python、php、perl、bash、sql、css   
 上述语言至少看都过一本教材或官网教程。大学考试时最高分是asm满分，平时大多数时间还是用c++和js   
-做过硬件开发、协议实现（主要是用c++解析网络协议）、端游、手游、页游（使用ogre3d、cocos2dx、unity3d之类的框架）、服务器虚拟化（docker、lxd、kvm）   
+做过硬件开发、协议实现（主要是用c++解析网络协议）、端游、手游、页游（使用ogre3d、cocos2dx、unity3d之类的框架）、服务器虚拟化（docker、lxd、kvm、k8s）   
 前后端开发，后端多数用nodejs，前端用vuejs和react。习惯跨平台、跨语言开发和动态语言的原生插件编写。  
 
-如需更多了解，请参看现有或将来的贴子，stay tuned。
+还有好多东西，我猜要学到人类毁灭才行

@@ -1,5 +1,5 @@
 #!/bin/bash
-source build.sh
+# source build.sh
 git pull
 git add .
 git commit -m"publish personal site again"
