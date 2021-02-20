@@ -41,6 +41,7 @@ export const Container = styled.div`
     }
 `
 export const Content = styled.div`
+    padding: 1em;
     width: 80%;
     height: 100%;
     border: 2px inset;
