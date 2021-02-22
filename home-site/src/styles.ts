@@ -63,8 +63,12 @@ export const Sidebar = styled.div`
         }
     }
     @media(max-width: 768px) {
+        > * {
+            &:first-child {
+                margin: 0.3rem auto 0.6rem;
+            }
+        }
         position: absolute;
-        margin: 0.3rem auto 0.5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -81,6 +85,11 @@ export const Item = styled.div`
     border: 3px groove;
     & + & {
         margin-top: 1rem;
+    }
+    @media(max-width: 768px) {
+        & + & {
+            margin-top: 0.5rem;
+        }
     }
 
 `
