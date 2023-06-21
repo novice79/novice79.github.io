@@ -10,5 +10,6 @@ Reactjs(UI) + HttpServer(Logic) + Sqlite(DB)
 
 - [Ebook](https://github.com/novice79/app/tree/ebook)
 - [Store](https://github.com/novice79/app/tree/store)
+- [Note](https://github.com/novice79/app/tree/note)
 
 to be continued ... 
